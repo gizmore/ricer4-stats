@@ -15,7 +15,7 @@ module Ricer4::Plugins::Stats
     def total_uptime
       get_setting(:uptime) + bot.uptime
     end
-    
+
     has_usage
     def execute
       rply(:msg_stats,
@@ -24,8 +24,8 @@ module Ricer4::Plugins::Stats
         channels: Ricer4::Channel.online.count,
         users: Ricer4::User.online.count,
         plugins: bot.loader.plugins.count,
-        events: Ricer4::Event.total_events,
-        listeners: Ricer4::Event.total_listeners,
+        events: ActiveRecord::Magic::Event::Container.total_events,
+        listeners: ActiveRecord::Magic::Event::Subscriptions.total_hooks,
         uptime: human_duration(bot.uptime),
         runtime: human_duration(total_uptime),
       )

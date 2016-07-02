@@ -10,8 +10,8 @@ describe Ricer4::Plugins::Stats do
   bot.load_plugins
   ActiveRecord::Magic::Update.run
 
-  it("works") do
-
+  it("has a working stats command") do
+    expect(bot.exec_line_for('Stats/Stats')).to start_with("msg_stats:{\"active_servers\":")
   end
   
 end

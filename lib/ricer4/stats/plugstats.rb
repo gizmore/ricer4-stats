@@ -5,8 +5,8 @@ module Ricer4::Plugins::Stats
     
     def plugin_init
       # Count when something is triggered    
-      arm_subscribe('ricer/triggered') do |sender, plugin|
-        TriggerCounter.count(plugin.id, sender.id)
+      arm_subscribe('ricer/triggered') do |sender, plugin, user|
+        TriggerCounter.count(plugin.id, user.id)
       end
     end
     

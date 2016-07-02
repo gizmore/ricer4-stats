@@ -14,7 +14,7 @@ module Ricer4::Plugins::Stats
     end
     
     arm_install('Ricer4::User' => 1, 'Ricer4::Plugin' => 1) do |m|
-      m.add_foreign_key table_name, :ricer_users,     :column => :user_id,   :on_delete => :cascade
+      m.add_foreign_key table_name, :ricer_users,   :column => :user_id,   :on_delete => :cascade
       m.add_foreign_key table_name, :ricer_plugins, :column => :plugin_id, :on_delete => :cascade
     end
     
