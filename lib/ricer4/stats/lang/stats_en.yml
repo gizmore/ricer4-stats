@@ -1,0 +1,19 @@
+en:
+  ricer4:
+    plugins:
+      stats:
+
+        plugstats:
+          description: 'Show plugin usage statistics.'
+          all_plugins: '%{plugins} plugins registered with $BOT$. In total %{total} commands have been processed.'
+          one_plugin:
+            one: 'The %{plugin} plugin has been executed once.'
+            other: 'The %{plugin} plugin has been executed %{count} times.'
+          toptenpage: 'Top users for %{plugin}, page %{page}/%{pages}: %{out}.'
+          one_plugin_and_user:
+            one: '%{user} has executed %{plugin} once.'
+            other: '%{user} has executed %{plugin} %{count} times.'
+
+        stats:
+          description: 'Show connectivity statistics for $BOT$.'
+          msg_stats: 'Connected to %{active_servers}/%{total_servers} servers and %{channels} channels, seeing %{users} users. %{plugins} plugins and %{listeners} event handlers for %{events} events registered. Up since %{uptime} for a total of %{runtime}.'
