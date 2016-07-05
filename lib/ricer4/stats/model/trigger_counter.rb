@@ -1,8 +1,8 @@
 module Ricer4::Plugins::Stats
   class TriggerCounter < ActiveRecord::Base
     
-    # belongs_to :plugin, :class_name => 'Ricer4::Plugin'
-    # belongs_to :user, :class_name => 'Ricer4::User'
+    belongs_to :plugin, :class_name => 'Ricer4::Plugin'
+    belongs_to :user, :class_name => 'Ricer4::User'
     
     arm_install do |m|
       m.create_table table_name do |t|
